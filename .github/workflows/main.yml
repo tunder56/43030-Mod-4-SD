@@ -8,5 +8,19 @@ jobs:
   update_html_and_readme:
     runs-on: ubuntu-latest
     steps:
+      #Step 1: checkout Repo
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      #step 2: Update Index.html
+      - name: Update HTML
+        run: |
+          # Team Leader Updates
+          if [ "${{ github.actor }}" == "tunder56" ]; then
+            sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
+          fi
+          
+          if [ "${{ github.actor }}" == "studentamL" ]; then
+            sed -i '/<\/body>/i <p>Updated by Member 1 on '"$(date)"'</p>' index.html
+          fi
+
