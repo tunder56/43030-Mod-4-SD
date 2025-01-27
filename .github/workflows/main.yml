@@ -16,13 +16,7 @@ jobs:
       #step 2: Update Index.html
       - name: Update HTML
         run: |
-          if [ "${{ github.actor }}" == "tunder56" ]; then
-            sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
-          fi
-          
-          if [ "${{ github.actor }}" == "studentamL" ]; then
-            sed -i '/<\/body>/i <p>Updated by Member 1 on '"$(date)"'</p>' index.html
-          fi
+          sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
           
       #Step 3 Update readme
       - name: Update Readme
