@@ -16,7 +16,7 @@ jobs:
       #step 2: Update Index.html
       - name: Update HTML
         run: |
-          sed -i 'i\<\/body>/<p>Updated by Team Leader on '"$(date)"'</p>' index.html
+          sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
           
       #Step 3 Update readme
       - name: Update Readme
