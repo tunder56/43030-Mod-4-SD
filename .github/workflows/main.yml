@@ -16,7 +16,6 @@ jobs:
       #step 2: Update Index.html
       - name: Update HTML
         run: |
-          # Team Leader Updates
           if [ "${{ github.actor }}" == "tunder56" ]; then
             sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
           fi
