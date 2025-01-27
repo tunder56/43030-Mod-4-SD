@@ -24,6 +24,7 @@ jobs:
           if [ "${{ github.actor }}" == "studentamL" ]; then
             sed -i '/<\/body>/i <p>Updated by Member 1 on '"$(date)"'</p>' index.html
           fi
+          
       #Step 3 Update readme
       - name: Update Readme
         run: |
